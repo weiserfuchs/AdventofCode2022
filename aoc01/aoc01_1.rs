@@ -9,7 +9,6 @@ fn main() {
     let mut i_elve_cal = 0;
     let mut i_cal = 0;
     let mut b_last = false;
-    let mut a_top3 = [0,0,0];
     
     for line in buffered.lines() {
         b_last = false;
@@ -23,16 +22,6 @@ fn main() {
                 i_highest_elve = count_elves;
                 i_elve_cal = i_cal;
             }
-            if i_cal > a_top3[0] {
-                a_top3[2] = a_top3[1];
-                a_top3[1] = a_top3[0];
-                a_top3[0] = i_cal;
-            }else if i_cal > a_top3[1] {
-                a_top3[2] = a_top3[1];
-                a_top3[1] = i_cal;
-            }else if i_cal > a_top3[2] {
-                a_top3[2] = i_cal;
-            }
             i_cal = 0;
             b_last = true;
         }
@@ -44,19 +33,7 @@ fn main() {
             i_highest_elve = count_elves;
             i_elve_cal = i_cal;
         }
-        if i_cal > a_top3[0] {
-            a_top3[2] = a_top3[1];
-            a_top3[1] = a_top3[0];
-            a_top3[0] = i_cal;
-        }else if i_cal > a_top3[1] {
-            a_top3[2] = a_top3[1];
-            a_top3[1] = i_cal;
-        }else if i_cal > a_top3[2] {
-            a_top3[2] = i_cal;
-        }
     }
     println!("{i_highest_elve}");
     println!("{i_elve_cal}");
-    let i_sum = a_top3[0] + a_top3[1] + a_top3[2];
-    println!("{i_sum}");
 }
