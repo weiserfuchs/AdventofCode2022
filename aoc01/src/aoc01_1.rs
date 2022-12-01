@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufReader, BufRead};
 
 pub fn main() {
-    let input = File::open("aoc01_1.txt").expect("Doof");
+    let input = File::open("aoc01.txt").expect("Unable to open file");
     let buffered = BufReader::new(input);
     let mut count_elves = 0;
     let mut i_highest_elve = 0;
